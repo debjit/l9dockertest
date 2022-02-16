@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:21.04
 # FROM laravelsail/php81-composer:latest
 
 LABEL maintainer="Taylor Otwell"
