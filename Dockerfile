@@ -1,9 +1,8 @@
 FROM ubuntu:21.04
-# FROM laravelsail/php81-composer:latest
 
 LABEL maintainer="Taylor Otwell"
 
-ENV WWWGROUP 1000
+# ENV WWWGROUP 1000
 
 ARG WWWGROUP
 ARG NODE_VERSION=16
@@ -17,7 +16,7 @@ ENV TZ=IST
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update \
-    && apt-get install -y gnupg gosu curl ca-certificates zip unzip git supervisor sqlite3 libcap2-bin libpng-dev python2 python3\
+    && apt-get install -y gnupg gosu curl ca-certificates zip unzip git supervisor sqlite3 libcap2-bin libpng-dev python3\
     && mkdir -p ~/.gnupg \
     && chmod 600 ~/.gnupg \
     && echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf \
